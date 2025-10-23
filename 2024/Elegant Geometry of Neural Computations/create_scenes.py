@@ -15,7 +15,7 @@ def StableEquilbirumPerturbationScene():
     equlibria = neuron.find_equlibrium_points(0, [VOLTAGE_LIMITS[0], VOLTAGE_LIMITS[1]])
     stable_eq = [eq for eq in equlibria if eq['stability'] == 'stable'][0]
     X0 = [stable_eq['point'][0], stable_eq['point'][1]] # Initial conditions for the simulation (stable equilibrium)
-    save_folder = f'/Users/artemkirsanov/YouTube/Bifurcations/code/animations/stable_equilibrium_perturbation'
+    save_folder = f'home/Deboo/YouTube-Videos/2024/Elegant Geometry of Neural Computations/media/Bifurcations/animations/stable_equilibrium_perturbation'
     Path(save_folder).mkdir(parents=True, exist_ok=True)
     perturbations = [
         (0.1, 8, 0.02),
@@ -40,7 +40,7 @@ def UnstableEqulibriumPerturbationScene():
     unstable_eq = [eq for eq in equlibria if eq['stability'] == 'unstable'][0]
 
     X0 = [unstable_eq['point'][0], unstable_eq['point'][1]] # Initial conditions for the simulation (unstable equilibrium)
-    save_folder = f'/Users/artemkirsanov/YouTube/Bifurcations/code/animations/unstable_equilibrium_perturbation'
+    save_folder = f'home/Deboo/YouTube-Videos/2024/Elegant Geometry of Neural Computations/media/Bifurcations/animations/unstable_equilibrium_perturbation'
     Path(save_folder).mkdir(parents=True, exist_ok=True)
 
     # Creating perturbation vectors as equally spread in a circle around the unstable equilibrium
@@ -74,7 +74,7 @@ def CurrentRampNullclineShift():
     dt = 0.05 # Time step
     t = np.arange(0, T, dt) # Time vector
     I_ext = neuron.create_ramp_current(t, 0, 5, 0, 25) # Ramp current
-    save_folder = Path(f'/Users/artemkirsanov/YouTube/Bifurcations/code/animations/current_ramp_nullcline_shift')
+    save_folder = Path(f'home/Deboo/YouTube-Videos/2024/Elegant Geometry of Neural Computations/media/Bifurcations/animations/current_ramp_nullcline_shift')
     Path(save_folder).mkdir(parents=True, exist_ok=True)
 
     

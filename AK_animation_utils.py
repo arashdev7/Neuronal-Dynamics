@@ -5,7 +5,7 @@ from matplotlib.patches import Rectangle
 import matplotlib.pyplot as plt
 import matplotlib.animation
 
-from tqdm import tqdm_notebook as tqdm
+from tqdm.notebook import tqdm
 import cmasher
 
 def hex_to_rgb(value):

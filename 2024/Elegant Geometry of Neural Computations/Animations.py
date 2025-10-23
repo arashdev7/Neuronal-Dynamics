@@ -109,7 +109,7 @@ def cmap_from_hex_list(color_positions):
     return LinearSegmentedColormap.from_list('custom_cmap', list(zip(positions, colors_rgb)))
 
 
-def make_folder(name, root_dir='/Users/artemkirsanov/YouTube/Bifurcations/Assets/Phase portrait animations'):
+def make_folder(name, root_dir='/home/Deboo/Youtube-Videos/2024/Elegant Geometry of Neural Computations/media/Bifurcations/Assets/Phase portrait animations'):
     path = Path(root_dir) / name
     path.mkdir(parents=True, exist_ok=True)
     return path

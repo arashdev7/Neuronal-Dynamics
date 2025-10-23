@@ -262,9 +262,16 @@ class NeuronModel:
     def dALLdt_backwards(self, X, t, I_ext_t):
         return [-x for x in self.dALLdt(X, t, I_ext_t)]
 
+    #def V_nullcline(self, V, I_ext):
+    #    """V nullcline"""
+    #    return (I_ext - self.I_Na(V) - self.I_L(V)) / (self.g_K * (V - self.E_K))
+    
     def V_nullcline(self, V, I_ext):
         """V nullcline"""
-        return (I_ext - self.I_Na(V) - self.I_L(V)) / (self.g_K * (V - self.E_K))
+        # Add a small epsilon to prevent division by zero
+        epsilon = 1e-9 
+        denominator = (self.g_K * (V - self.E_K)) + epsilon
+        return (I_ext - self.I_Na(V) - self.I_L(V)) / denominator
     
     def n_nullcline(self, V):
         """n nullcline"""
